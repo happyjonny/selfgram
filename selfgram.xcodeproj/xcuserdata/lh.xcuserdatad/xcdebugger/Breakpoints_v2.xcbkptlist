@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "selfgram/FeedViewController.swift"
+            timestampString = "476165134.022466"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "numberOfSectionsInTableView(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "selfgram/FeedViewController.swift"
+            timestampString = "476164441.210123"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "FeedViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "selfgram.FeedViewController.posts.setter : Swift.Array&lt;selfgram.Post&gt;"
+                  moduleName = "selfgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lh/Desktop/lh/selfgram/selfgram/FeedViewController.swift"
+                  timestampString = "475693114.034467"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "selfgram.FeedViewController.posts.materializeForSet : Swift.Array&lt;selfgram.Post&gt;"
+                  moduleName = "selfgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lh/Desktop/lh/selfgram/selfgram/FeedViewController.swift"
+                  timestampString = "475693114.034575"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "selfgram.FeedViewController.init (selfgram.FeedViewController.Type)(style : __C.UITableViewStyle) -&gt; selfgram.FeedViewController"
+                  moduleName = "selfgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lh/Desktop/lh/selfgram/selfgram/FeedViewController.swift"
+                  timestampString = "475693114.034657"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "selfgram.FeedViewController.init (selfgram.FeedViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; selfgram.FeedViewController"
+                  moduleName = "selfgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lh/Desktop/lh/selfgram/selfgram/FeedViewController.swift"
+                  timestampString = "475693114.034738"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "382">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "selfgram.FeedViewController.init (selfgram.FeedViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;selfgram.FeedViewController&gt;"
+                  moduleName = "selfgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lh/Desktop/lh/selfgram/selfgram/FeedViewController.swift"
+                  timestampString = "475693114.034826"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            scope = "0"
+            stopOnStyle = "0">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.Sound">
+                  <ActionContent
+                     soundName = "Blow">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

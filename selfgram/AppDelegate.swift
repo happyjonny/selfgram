@@ -7,17 +7,59 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // [Optional] Power your app with Local Datastore. For more info, go to
+        // https://parse.com/docs/ios/guide#local-datastore
+       // Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Post.registerSubclass()
+        Activity.registerSubclass()
+        
+        Parse.setApplicationId("MJsv8rETMk1Yc4wb50IfPQH57jmYtIuuCjgNcvzY",
+            clientKey: "ZRx6vAW57OzFozwymruPDoFHGMWcqsqvU8wxUo2Y")
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        // ...
+        
+        let user = PFUser()
+        let username = "jonny"
+        let password = "1234"
+        user.username = username
+        user.password = password
+        
+        user.signUpInBackgroundWithBlock { (success, error) -> Void in
+            if success{
+                print("signup succeed")
+            }else{
+                PFUser.logInWithUsernameInBackground(username, password: password, block: { (user, error) -> Void in
+                    if let user = user {
+                        print("login succeed as \(user.username)")
+                    }
+                })
+            }
+          
+        }
+        
+        
+        
+        
         return true
     }
+    
+    // ...
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
