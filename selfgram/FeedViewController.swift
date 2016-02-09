@@ -15,25 +15,49 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
 
 
     
+    @IBAction func refreshPulled(sender: UIRefreshControl) {
+        getPosts()
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if let query = Post.query(){
-            query.orderByAscending("createdAt")
+    func getPosts() {
+        if let query = Post.query() {
+            query.orderByDescending("createdAt")
             query.includeKey("user")
             query.findObjectsInBackgroundWithBlock({ (posts, error) -> Void in
+                
                 if let posts = posts as? [Post]{
                     self.posts = posts
                     self.tableView.reloadData()
-                    
+                    // remove the spinning circle if needed
+                    self.refreshControl?.endRefreshing()
                 }
+                
             })
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getPosts()
 
         }
     
 
 
+    @IBAction func doubleTappedSelfie(sender: UITapGestureRecognizer) {
+        // get the location (x,y) position on our tableView where we have clicked
+        let tapLocation = sender.locationInView(tableView)
+        
+        // based on the x, y position we can get the indexPath for where we are at
+        if let indexPathAtTapLocation = tableView.indexPathForRowAtPoint(tapLocation){
+            
+            // based on the indexPath we can get the specific cell that is being tapped
+            let cell = tableView.cellForRowAtIndexPath(indexPathAtTapLocation) as! SelfieCell
+            
+            //run a method on that cell.
+            cell.tapAnimation()
+        }
+    }
     
     
 

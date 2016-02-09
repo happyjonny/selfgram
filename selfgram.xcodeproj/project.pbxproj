@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C9E6F6E1EF668ABFA844A934 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A57DDE7A4A6157EC1ECFBE /* Pods.framework */; };
 		EB14A0AA1C644AA1000C5717 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14A0A91C644AA1000C5717 /* Activity.swift */; };
+		EB40D6361C6AAC2B00562CA1 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40D6351C6AAC2B00562CA1 /* ActivityCell.swift */; };
+		EB40D6381C6AAC4C00562CA1 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40D6371C6AAC4C00562CA1 /* ActivityViewController.swift */; };
 		EB928BF21C521DB3000658AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB928BF11C521DB3000658AB /* User.swift */; };
 		EB928BF41C521DC8000658AB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB928BF31C521DC8000658AB /* Post.swift */; };
 		EB928BFC1C521F05000658AB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB928BFB1C521F05000658AB /* FeedViewController.swift */; };
@@ -45,6 +47,8 @@
 		98DC98FBE7A08D1395E9006A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A2B54509056DB62FFE6C72D7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EB14A0A91C644AA1000C5717 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		EB40D6351C6AAC2B00562CA1 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		EB40D6371C6AAC4C00562CA1 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		EB928BF11C521DB3000658AB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EB928BF31C521DC8000658AB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		EB928BFB1C521F05000658AB /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 		EBE847621C3F5E0D00B646A1 /* selfgram */ = {
 			isa = PBXGroup;
 			children = (
+				EB40D6371C6AAC4C00562CA1 /* ActivityViewController.swift */,
+				EB40D6351C6AAC2B00562CA1 /* ActivityCell.swift */,
 				EB928BFB1C521F05000658AB /* FeedViewController.swift */,
 				EBE847631C3F5E0D00B646A1 /* AppDelegate.swift */,
 				EBE847651C3F5E0D00B646A1 /* ViewController.swift */,
@@ -354,6 +360,8 @@
 			files = (
 				EBE847661C3F5E0D00B646A1 /* ViewController.swift in Sources */,
 				EBE847641C3F5E0D00B646A1 /* AppDelegate.swift in Sources */,
+				EB40D6361C6AAC2B00562CA1 /* ActivityCell.swift in Sources */,
+				EB40D6381C6AAC4C00562CA1 /* ActivityViewController.swift in Sources */,
 				EB928BFC1C521F05000658AB /* FeedViewController.swift in Sources */,
 				EB928BFE1C5221ED000658AB /* SelfieCell.swift in Sources */,
 				EBDD24E91C522C6A00404395 /* ProfileViewController.swift in Sources */,
@@ -502,6 +510,7 @@
 			baseConfigurationReference = 98DC98FBE7A08D1395E9006A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = selfgram/Info.plist;
@@ -509,6 +518,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "lh-jonny.selfgram-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -517,6 +527,7 @@
 			baseConfigurationReference = A2B54509056DB62FFE6C72D7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = selfgram/Info.plist;

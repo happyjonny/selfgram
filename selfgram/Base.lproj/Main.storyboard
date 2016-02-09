@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K5o-9c-1UV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K5o-9c-1UV">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -39,6 +39,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="L1J-l3-8QR" customClass="SelfieCell" customModule="selfgram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="320"/>
@@ -54,7 +55,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0G-8q-ar7">
-                                            <rect key="frame" x="8" y="294.5" width="72.5" height="20.5"/>
+                                            <rect key="frame" x="8" y="294" width="72.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -77,11 +78,20 @@
                                                 <action selector="likeButtonClicked:" destination="L1J-l3-8QR" eventType="touchUpInside" id="WHS-OI-7Ja"/>
                                             </connections>
                                         </button>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hearts-on" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-fK-QbP">
+                                            <rect key="frame" x="288.5" y="123" width="23" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="23" id="DsT-vj-UNG"/>
+                                                <constraint firstAttribute="height" constant="20" id="mwr-Uu-sOH"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="s6l-fK-QbP" firstAttribute="centerX" secondItem="Ytv-Mg-UE9" secondAttribute="centerX" id="022-Pm-G6R"/>
                                         <constraint firstItem="A0G-8q-ar7" firstAttribute="top" secondItem="TfZ-WH-SPp" secondAttribute="bottom" constant="8" id="7yG-s8-cEx"/>
                                         <constraint firstItem="TfZ-WH-SPp" firstAttribute="leading" secondItem="qlc-CI-ffP" secondAttribute="leadingMargin" id="9Dh-lb-bO7"/>
                                         <constraint firstItem="TfZ-WH-SPp" firstAttribute="top" secondItem="Ytv-Mg-UE9" secondAttribute="bottom" constant="8" id="IM0-ZH-UOZ"/>
+                                        <constraint firstItem="s6l-fK-QbP" firstAttribute="centerY" secondItem="Ytv-Mg-UE9" secondAttribute="centerY" id="NlU-mS-Wes"/>
                                         <constraint firstItem="HGd-xE-DZl" firstAttribute="top" secondItem="Ytv-Mg-UE9" secondAttribute="bottom" constant="8" id="XwR-rw-d7c"/>
                                         <constraint firstItem="A0G-8q-ar7" firstAttribute="leading" secondItem="qlc-CI-ffP" secondAttribute="leadingMargin" id="ecA-3k-p3m"/>
                                         <constraint firstItem="Ytv-Mg-UE9" firstAttribute="top" secondItem="qlc-CI-ffP" secondAttribute="topMargin" id="kZi-iv-93W"/>
@@ -92,6 +102,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentLabel" destination="A0G-8q-ar7" id="o9p-fv-sc8"/>
+                                    <outlet property="heartAnimationView" destination="s6l-fK-QbP" id="HQw-3z-ctZ"/>
                                     <outlet property="likeButton" destination="HGd-xE-DZl" id="9tU-YR-efD"/>
                                     <outlet property="selfieImageView" destination="Ytv-Mg-UE9" id="yLq-5v-ytI"/>
                                     <outlet property="usernameLabel" destination="TfZ-WH-SPp" id="TFM-93-irC"/>
@@ -106,6 +117,7 @@
                         <connections>
                             <outlet property="dataSource" destination="NnD-Cr-TnU" id="UsS-ix-vhL"/>
                             <outlet property="delegate" destination="NnD-Cr-TnU" id="lzH-iG-EUO"/>
+                            <outletCollection property="gestureRecognizers" destination="rJc-5h-TwG" appends="YES" id="yad-Rn-Lhm"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ddW-pl-udT">
@@ -115,26 +127,46 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="3DD-i9-td0">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshPulled:" destination="NnD-Cr-TnU" eventType="valueChanged" id="pcd-vC-9S1"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnF-Zh-lKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="rJc-5h-TwG">
+                    <connections>
+                        <action selector="doubleTappedSelfie:" destination="NnD-Cr-TnU" id="buI-s3-4wZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1114" y="-982"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Activity View Controller-->
         <scene sceneID="8Wp-ef-gxR">
             <objects>
-                <tableViewController id="lu1-Up-pJJ" sceneMemberID="viewController">
+                <tableViewController id="lu1-Up-pJJ" customClass="ActivityViewController" customModule="selfgram" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="o3R-cb-DaQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="t7e-v5-L6a">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" textLabel="AgH-l3-03A" style="IBUITableViewCellStyleDefault" id="t7e-v5-L6a" customClass="ActivityCell" customModule="selfgram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t7e-v5-L6a" id="qNR-Vh-nFE">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AgH-l3-03A">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
